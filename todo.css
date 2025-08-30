@@ -5,18 +5,26 @@
     font-family: sans-serif;
 }
 
-.header{
+.header {
     position: fixed;
-    left: 20%;
+    top: 20px;                /* keeps it visible after scroll */
+    left: 50%;                /* start at the center */
+    transform: translateX(-50%); /* shift back half its width */
     width: 60vw;
     padding: 15px 20px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
     background-color: #000;
     border-radius: 20px;
+    z-index: 1000;            /* stay above other content */
 }
+
+/* push page content down so it doesn’t hide under header */
+body {
+    padding-top: 100px; /* adjust to match your header height + top gap */
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -56,6 +64,19 @@
     height: 12px;
 }
 
+.message-banner {
+  margin: 20px auto;
+  width: 60vw;
+  background: #fff0f6;
+  color: #a61e4d;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
 .todo-container{
     width: 100vw;
     height: auto;
@@ -64,6 +85,7 @@
     flex-wrap: wrap;
     gap: 15px;
     padding: 50px 40px;
+   
 }
 .todo-card{
     width: 250px;
