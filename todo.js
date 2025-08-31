@@ -5,10 +5,27 @@ let todoContainer = document.getElementById('todo-container')
 const subBtn = document.getElementById('sub');
 let errorMessage = document.getElementById('error');
 let errorDiv = document.getElementById('error-div')
+const modeToggle = document.getElementById('mode-container')
+const modeElement = document.getElementById("toggle-mode")
+
+modeToggle.addEventListener('click', toggleMode)
+
+function toggleMode() {
+    if (modeToggle) {
+        modeToggle.classList.toggle('active'); // just one toggle
+
+        document.body.classList.toggle('light-mode');
+
+        if (modeToggle.classList.contains('active')) {
+            modeElement.innerHTML = `<i class='bx bx-moon'></i>`;
+        } else {
+            modeElement.innerHTML = `<i class='bx bx-night-light'></i>`;
+        }
+    }
+}
 
 
-
-  let todoList = [];
+let todoList = [];
 
   // working with local storage 
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List </title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
@@ -18,6 +19,13 @@
                     </svg>
                     Add
             </button>
+
+            <div class="mode-toggle bg-white " id="mode-container">
+                <span id="toggle-mode">
+                    <i class='bx  bx-night-light'  ></i> 
+                </span>
+                
+            </div>
         </div>
     </header>
   <div class="message-banner">
@@ -34,15 +42,16 @@
 
     <div class="modal-overlay mo hidden" >
         <div class="modal">
+             <div class="cls" id="close">
+                <h1>x</h1>
+            </div>
             <div class="error hidden" id="error-div">
                 <p id="error"></p>
             </div>
-            <div class="cls" id="close">
-                <h1>x</h1>
-            </div>
+           
             <h1 class="chore">Add Your <span>Chores</span></h1>
             <label for="title">Title</label>
-            <input type="text" id="title" required>
+            <input type="text" id="title" required placeholder="Enter chores name">
 
             <label for="description">Description</label>
             <textarea name="" id="description" placeholder="describe your todo chore..." required></textarea>
