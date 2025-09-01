@@ -175,6 +175,8 @@ body.light-mode {
     border-radius: 11px;
      box-shadow: 2px 3px 1px 0px #d6336c;
      transition: all .4s;
+     overflow: hidden;
+     text-wrap: wrap;
 }
 .todo-card:hover{
     box-shadow: 2px 3px 1px 0px #ec7ca3;
@@ -191,7 +193,7 @@ body.light-mode {
     color: #fff;
 }
 .todo-header{
-    text-transform: capitalize;
+    text-transform: inherit;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -202,6 +204,7 @@ body.light-mode {
     font-size: 15px;
     color: #aaa;
     margin-bottom: 10px;
+    max-width: 85%;
 }
 .created-date{
     font-size: 12px;
@@ -329,6 +332,33 @@ textarea{
 }
 
 
+.letter-casing{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.letter-casing label{
+    font-size: 14px;
+}
+
+.letter-casing select{
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: .8;
+    outline-color: #a61e4d;
+    border-radius: 11px ;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
 
 @media (max-width: 750px) {
     .todo-container{

@@ -8,6 +8,7 @@ let errorDiv = document.getElementById('error-div')
 const modeToggle = document.getElementById('mode-container')
 const modeElement = document.getElementById("toggle-mode")
 
+
 modeToggle.addEventListener('click', toggleMode)
 
 function toggleMode() {
@@ -59,11 +60,11 @@ function addTodo(){
     }else{
 
        let todo = { 
-    title, 
-    description, 
-    date, 
-    completed: false 
-  };
+        title, 
+        description, 
+        date, 
+        completed: false 
+    };
     
         todoList.push(todo);
         saveTodo() 
@@ -103,6 +104,7 @@ Complete</button>
     }
 
     todoContainer.innerHTML = todoHTML;
+    selectOption()
     deleteTodo();
     completeTodo();
     
@@ -174,3 +176,28 @@ function completeTodo(){
 
 
 window.addEventListener('DOMContentLoaded', loadTodo);
+
+let selectElement = document.getElementById("select-case");
+
+function selectOption() {
+    const todoCards = document.querySelectorAll('.todocard');
+
+    todoCards.forEach((card) => {
+        // remove any old text-transform classes first
+        card.classList.remove('lowercase', 'uppercase', 'capitalize');
+
+        if (selectElement.value === "lowercase") {
+            console.log("lower");
+            card.classList.add('lowercase');
+        } else if (selectElement.value === "uppercase") {
+            console.log("upper");
+            card.classList.add('uppercase');
+        } else {
+            console.log("cap");
+            card.classList.add('capitalize');
+        }
+    });
+}
+
+selectElement.addEventListener('change', selectOption);
+
