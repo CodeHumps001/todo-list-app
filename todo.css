@@ -177,6 +177,18 @@ body.light-mode {
      transition: all .4s;
      overflow: hidden;
      text-wrap: wrap;
+     animation: fade-in ease-in-out .9s forwards;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: skew(20deg);
+    }
+    100%{
+        opacity: 1;
+    }
+    
 }
 .todo-card:hover{
     box-shadow: 2px 3px 1px 0px #ec7ca3;
@@ -230,6 +242,12 @@ body.light-mode {
     border-radius: 8px;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
+    transition: all .4s;
+}
+.delete:hover, .submit:hover, .complete:hover{
+    opacity: .9;
+
 }
 .complete{
     display: flex;
@@ -242,6 +260,8 @@ body.light-mode {
     border-radius: 8px;
     color: #fff;
     font-weight: 600;
+    cursor: pointer;
+    transition: all .4s;
 }
 
 .del-icon, .com-icon{
