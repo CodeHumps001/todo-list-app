@@ -7,13 +7,7 @@ let errorMessage = document.getElementById('error');
 let errorDiv = document.getElementById('error-div')
 const modeToggle = document.getElementById('mode-container')
 const modeElement = document.getElementById("toggle-mode")
-const displaySavedTodo = document.getElementById('todo-logo')
 
-displaySavedTodo.addEventListener('click', ()=>{
-    if(displaySavedTodo) {
-        displayTodo()
-    }
-})
 
 modeToggle.addEventListener('click', toggleMode)
 
@@ -181,7 +175,8 @@ function completeTodo(){
 
 
 
-window.addEventListener('DOMContentLoaded', loadTodo);
+document.addEventListener('DOMContentLoaded', loadTodo);
+document.addEventListener('DOMContentLoaded', displayTodo);
 
 let selectElement = document.getElementById("select-case");
 
@@ -193,13 +188,13 @@ function selectOption() {
         card.classList.remove('lowercase', 'uppercase', 'capitalize');
 
         if (selectElement.value === "lowercase") {
-            console.log("lower");
+           
             card.classList.add('lowercase');
         } else if (selectElement.value === "uppercase") {
-            console.log("upper");
+          
             card.classList.add('uppercase');
         } else {
-            console.log("cap");
+          
             card.classList.add('capitalize');
         }
     });

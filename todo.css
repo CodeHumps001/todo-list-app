@@ -282,6 +282,14 @@ body.light-mode {
     justify-content: center;
     align-items: center;
     z-index: 2000;
+    animation: fade ease-in .5s backwards;
+  
+}
+
+@keyframes fade {
+    0%{
+        transform: translate(0%, -100%);
+    }
 }
 
 .modal{
@@ -342,7 +350,9 @@ textarea{
 }
 .hidden{
     display: none;
+
 }
+
 
 .completed{
   background-color: #a61e4d;
